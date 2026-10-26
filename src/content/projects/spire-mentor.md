@@ -26,4 +26,6 @@ Combat uses MCTS with chance nodes, so it does not see upcoming draws or other h
 
 \* Ironclad A10 is newer: 107/400 runs (95% CI 22.6–31.3%), measured 26 October 2026 at 4,000 sims (16,000 at bosses) after an A10-focused PPO continuation and a behavior-cloned move prior for elite and boss fights. Its other cells predate those changes.
 
+The gaps between characters mostly reflect training effort, not a ceiling. Development currently pushes one character, Ironclad, as far as possible before returning to the others, and the lower rows haven't been retrained since.
+
 The browser workbench compiles the engine to WebAssembly. You can rewind and branch any decision, ask the AI for a hint, browse its search tree, let it play the fights, or review a finished run for its biggest drops in win chance. The Spire Mentor mod on the Steam Workshop brings much of this into the real game. You need your own copy of the game: art and sound are extracted locally from your install and aren't in the repository.

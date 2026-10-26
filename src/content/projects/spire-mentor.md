@@ -9,10 +9,10 @@ approaches: [search, rl, imitation, tooling]
 language: "Rust, Python, TypeScript, C#"
 license: MIT
 status: active
-summary: "Rust port of Slay the Spire 2's combat and run rules, parity-tested against the game's own code, with MCTS combat and a PPO run policy. Includes a browser workbench and an in-game coaching mod."
+summary: "Fast headless Slay the Spire 2 simulator in Rust, parity-tested against the game's own code, plus a bot built on it: MCTS combat and a PPO run policy. Includes a browser workbench and an in-game coaching mod."
 ---
 
-The engine covers all five characters on the v0.107.1 build. After every action it is checked in lockstep against the game's C# code, run headless, plus a fuzz tier. The README reports Ironclad at 6,104/6,104 fuzzed fights clean and the other characters at 99.4–99.8%. On one core it runs about 59k random-play fights per second, which the project puts at about 1,500× the game's own logic run headless.
+The simulator is a from-scratch Rust port of the game rules, both combat and the run around it (map, events, shops, rewards), for all five characters on the v0.107.1 build. Python bindings expose single fights, whole runs and the training stack. Parity tests check it in lockstep after every action against the game's C# code, run headless, plus a fuzz tier. The README reports Ironclad at 6,104/6,104 fuzzed fights clean and the other characters at 99.4–99.8%. On one core it runs about 59k random-play fights per second, which the project puts at about 1,500× the game's own logic run headless.
 
 Combat uses MCTS with chance nodes, so it does not see upcoming draws or other hidden RNG. Run-level choices such as cards, paths, shops and events come from a PPO policy per character. The README reports these win rates at 8,000 sims per decision (October 2026, 200 runs per cell at A0–A8 and 500 at A9–A10):
 
